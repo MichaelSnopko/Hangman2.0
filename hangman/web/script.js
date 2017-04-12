@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+
 var rand = 0;
 var word = "";
 var numWrong = 0;
@@ -140,7 +141,7 @@ function hangman(){
 
 function draw(){
     var ctx = document.getElementById("hangman").getContext('2d');
-        ctx.fillStyle = "#72a2ad";
+        ctx.fillStyle = "white";
         ctx.lineWidth=3;
         ctx.fillRect(0, 0, 300, 300);
         ctx.beginPath(); //vertical bar
@@ -301,13 +302,12 @@ function guessLetter(){
 
 function win(){
     var ul1 = document.getElementById('underline1').offsetWidth;
-    var again = document.getElementById('again');
     var results = document.getElementById('results');
         results.style.visibility = "visible";
         results.style.color = "#00b100";
-    if(numWrong > 6){
+    if(numWrong > 4){
         document.getElementById('letterBank').style.display = "none";
-        again.style.display = "block";
+        
         document.getElementById('home').style.display = "block";
         if(ul1 == 50){
             results.style.lineHeight = "70px";
@@ -324,21 +324,17 @@ function win(){
     }
     else{
         results.innerHTML = "You win!";
-        document.getElementById('letterBank').style.display = "none";
-        again.style.display = "block";
+        document.getElementById('letterBank').style.display = "none"; 
         document.getElementById('home').style.display = "block";
-        if(ul1 == 50){
-            again.style.marginTop = "75px";
+        if(ul1 == 50){ 
             results.style.marginTop = "75px";
             results.style.fontSize = "200px";
         }
         if(ul1 == 28){
-            again.style.marginTop = "50px";
             results.style.marginTop = "40px";
             results.style.fontSize = "100px";
         }
         if(ul1 == 18){
-            again.style.marginTop = "40px";
             results.style.marginTop = "15px";
             results.style.fontSize = "75px";
         }
@@ -368,7 +364,7 @@ function hang(){
             ctx.stroke();
     }
     if(numWrong==3){
-        ctx.fillStyle = "#72a2ad";
+        ctx.fillStyle = "white";
         ctx.fillRect(138, 102, 24, 12); //cover mouth
         ctx.beginPath(); //straight mouth
             ctx.moveTo(140,108);
