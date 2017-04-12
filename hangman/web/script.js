@@ -11,15 +11,13 @@ var numWrong = 0;
 var numRight = 0;
 var wordLength = 0;
 var numChar = 0;
-var tempWords = ["Early bird gets the worm", "Read between the lines", "I can eat a horse", "Twenty-four seven", "Cat got your tounge", "One in one million", "I beg to differ", "Easier said than done", "Add insult to injury", "Don't cry over spilled milk", "Curiosity killed the cat", "Two peas in a pod", "That's the last straw", "Piece of cake", "Speak of the devil", "Go the whole nine yards", "An eye for an eye", "Hit the hay", "Stab someone in the back", "Quit cold turkey", "Cut to the chase", "Best of both worlds", "Kill two birds with one stone", "Break a leg", "Hit the nail on the head", "Kick the bucket"];     
-
+var tempWords = ["abc"]
 //$.getJSON('/words').done(function(data))
 
 function Game(){
     document.getElementById('introPage').style.display = "none";
     document.getElementById('singlePage').style.display = "block";
 }
-
 
 
 function Words(){
@@ -250,6 +248,11 @@ function guessLetter(){
         numWrong++;
         hang();
     }
+    
+    if(numWrong < 8 && numRight === numChar){
+        win();
+    }
+    
     if(numWrong==6){
         results.style.visibility = "visible";
         results.style.color = "red";
@@ -304,8 +307,8 @@ function win(){
     var ul1 = document.getElementById('underline1').offsetWidth;
     var results = document.getElementById('results');
         results.style.visibility = "visible";
-        results.style.color = "#00b100";
-    if(numWrong > 4){
+        results.style.color = "black";
+    if(numWrong > 6){
         document.getElementById('letterBank').style.display = "none";
         
         document.getElementById('home').style.display = "block";
@@ -327,8 +330,8 @@ function win(){
         document.getElementById('letterBank').style.display = "none"; 
         document.getElementById('home').style.display = "block";
         if(ul1 == 50){ 
-            results.style.marginTop = "75px";
-            results.style.fontSize = "200px";
+            results.style.height = "70px";
+            results.style.fontSize = "30px";
         }
         if(ul1 == 28){
             results.style.marginTop = "40px";
