@@ -215,7 +215,7 @@ body, html, #category, #category1, #words, #introPage, #introText, #introText p,
     visibility: hidden;
     line-height: 70px;
 }
-#again, #home, #home1{
+#home, #home1{
     display: none;
     width: 50%;
     height: 65px;

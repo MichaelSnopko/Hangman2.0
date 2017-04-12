@@ -20,6 +20,7 @@ function Game(){
 }
 
 
+
 function Words(){
     rand = Math.floor(Math.random()*tempWords.length);
     word = tempWords[rand];
@@ -267,7 +268,6 @@ function guessLetter(){
     }
     if(numWrong==7){
         results.innerHTML = "You lose!";
-        document.getElementById('again').style.display = "block";
         document.getElementById('home').style.display = "block";
         document.getElementById('letterBank').style.visibility = "hidden";
         document.getElementById('letter1').style.visibility = "visible";
@@ -444,59 +444,4 @@ function hang(){
             ctx.lineTo(160,98);
             ctx.stroke();
     }
-}
-
-function reset(){
-    var ul1 = document.getElementById('underline1').offsetWidth;
-    var results = document.getElementById('results');
-    var again = document.getElementById('again');
-    for(a = 1; a < 101; a++){
-        document.getElementById('letter'+a).innerHTML = "&nbsp;";
-        document.getElementById('underline'+a).style.width = ul1 + "px";
-        if(ul1 == 50){
-            document.getElementById('underline'+a).style.marginRight = "5px";
-            results.style.height = "70px";
-        }
-        else if(ul1 == 28){
-            document.getElementById('underline'+a).style.marginRight = "3px";
-            results.style.height = "50px";
-        }
-        else{
-            document.getElementById('underline'+a).style.marginRight = "3px";
-            results.style.height = "40px";
-        }
-        document.getElementById('underline'+a).style.display = "none";
-        document.getElementById('underline'+a).style.borderBottom = "0px";
-    }
-    var bank = document.getElementById("letterBank").querySelectorAll("div");
-    var cBank = document.getElementById("challengeBank").querySelectorAll("div");
-    for(b = 0; b < 26; b++){
-        bank[b].style.visibility = "visible";
-        cBank[b].style.visibility = "visible";
-    }
-    numWrong = 0;
-    numRight = 0;
-    wordLength = 0;
-    numChar = 0;
-    results.style.marginTop = "5px";
-    results.style.lineHeight = "40px";
-    results.innerHTML = " ";
-    document.getElementById('letterBank').style.display = "block";
-    again.style.marginTop = "0px";
-    again.style.display = "none";
-    document.getElementById('home').style.display = "none";
-    if(tempWords.indexOf(word) > -1){
-        tempWords.splice(rand,1);
-        Words();
-    }
-    else if(document.getElementById('charcount').innerHTML > 0){
-        document.getElementById('gamePage').style.display = "none";
-        document.getElementById('input').value = "";
-        document.getElementById('charcount').innerHTML = "0";
-    }
-}
-
-function PlayAgain(){
-    document.getElementById('gamePage').style.display = "none";
-    document.getElementById('home1').style.display = "block";
 }
