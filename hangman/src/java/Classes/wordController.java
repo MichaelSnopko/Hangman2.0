@@ -27,11 +27,9 @@ import javax.ws.rs.core.Response;
  */
 @ApplicationScoped
 public class wordController {
-    private List<Word> words;
+    private List<Word> words =new ArrayList<>();
     private Word currentWord = new Word();
 
-    //List<String> myArrayList = new ArrayList<String>();
-    //String[] myArray = myArrayList.toArray(new String[myArrayList.size()]);
     public wordController() {
         currentWord = new Word(0, "", "", "");
         getDBUtils();
@@ -64,18 +62,23 @@ public class wordController {
         return null;
     }
 
-    public Word getById(int id) {
+    public Word getById(int id) {    
         Word result = null;
         for (Word w : words) {
             if (w.getWordId() == id) {
                 result = w;
             }
         }
-        return null;
+        return result;
     }
 
     public JsonObject getByIdJson(int id) {
-        return getById(id).toJson();
+        Word w = getById(id);
+        if (w != null) {
+            return w.toJson();
+        } else {
+            return null;
+        }
     }
 
     public JsonArray getBySearchJson() {
