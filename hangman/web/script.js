@@ -11,8 +11,6 @@ var numWrong = 0;
 var numRight = 0;
 var wordLength = 0;
 var numChar = 0;
-var tempWords = ["abc"]
-//$.getJSON('/words').done(function(data))
 
 function Game(){
     document.getElementById('introPage').style.display = "none";
@@ -21,11 +19,18 @@ function Game(){
 
 
 function Words(){
-    rand = Math.floor(Math.random()*tempWords.length);
-    word = tempWords[rand];
+    rand = Math.floor(Math.random()*29)+1;
+    word = getValue();
     document.getElementById('singlePage').style.display = "none";
-    document.getElementById('categoryName').innerHTML = "Words";
+    //document.getElementById('categoryName').innerHTML = "Words";
     hangman();
+}
+function getValue(){
+   var value= $.ajax({ 
+      url: 'http://localhost:8080/hangman/r/words/' + rand, 
+      async: false
+   }).responseText;
+   return value;
 }
 
     if(numRight==1){

@@ -70,10 +70,10 @@ public class Word {
     
     public JsonObject toJson(){
     return Json.createObjectBuilder()
-            .add("wordId", wordId)
-            .add("description", description)
+            //.add("wordId", wordId)
+            //.add("description", description)
             .add("title", title)
-            .add("category", category)
+            //.add("category", category)
             .build();  
     }
 }
