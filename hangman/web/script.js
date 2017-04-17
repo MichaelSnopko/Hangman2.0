@@ -145,7 +145,7 @@ function hangman(){
 
 function draw(){
     var ctx = document.getElementById("hangman").getContext('2d');
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "#65aef2";
         ctx.lineWidth=3;
         ctx.fillRect(0, 0, 300, 300);
         ctx.beginPath(); //vertical bar
@@ -373,7 +373,7 @@ function hang(){
             ctx.stroke();
     }
     if(numWrong==3){
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "#65aef2";
         ctx.fillRect(138, 102, 24, 12); //cover mouth
         ctx.beginPath(); //straight mouth
             ctx.moveTo(140,108);
