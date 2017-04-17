@@ -29,7 +29,7 @@ a:hover{
 a:visited{
     color: #b10000;
 }
-body, html, #category, #category1, #words, #introPage, #introText, #introText p, #sp, #sp1, #singlePage #wordWrap, #wordWrap div, #gamePage, #letterBank div{
+body, html, #category, #category1, #words, #add, #introPage, #introText, #introText p, #sp, #sp1, #singlePage #wordWrap, #wordWrap div, #gamePage, #letterBank div{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -105,6 +105,19 @@ body, html, #category, #category1, #words, #introPage, #introText, #introText p,
     width: 700px;
     height: 150px;
     margin-bottom: 30px;
+}
+#add{
+    margin-top: 100px;
+    width: 250px;
+    height: 75px;
+    font-size: 35px;
+    line-height: 75px;
+    text-align: center;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    margin-left:225px;
+    border-radius: 10px;  
 }
 
 #words{
