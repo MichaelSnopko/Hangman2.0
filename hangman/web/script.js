@@ -20,9 +20,9 @@ function Game(){
 
 function Words(){
     rand = Math.floor(Math.random()*29)+1;
+
     word = getValue();
     document.getElementById('singlePage').style.display = "none";
-    //document.getElementById('categoryName').innerHTML = "Words";
     hangman();
 }
 function getValue(){
@@ -30,7 +30,7 @@ function getValue(){
       url: 'http://localhost:8080/hangman/r/words/' + rand, 
       async: false
    }).responseText;
-   return value;
+   return value.substr(10,value.length-12);
 }
 
     if(numRight==1){
@@ -119,6 +119,7 @@ function hangman(){
             document.getElementById('letter'+x).style.display = "block";
             document.getElementById('underline'+x).style.display = "block";
             spaces++;
+            numChar--;
         }
         else if(letter === "?" || letter === "!" || letter === "," || letter === "." || letter === "-" || letter === "'"){
             document.getElementById('letter'+x).innerHTML = letter;
@@ -276,7 +277,7 @@ function guessLetter(){
         }
     }
     if(numWrong==7){
-        results.innerHTML = "You lose!";
+        results.innerHTML = "You lose!" 
         document.getElementById('home').style.display = "block";
         document.getElementById('letterBank').style.visibility = "hidden";
         document.getElementById('letter1').style.visibility = "visible";
