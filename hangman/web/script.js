@@ -27,7 +27,7 @@ function Words(){
 }
 function getValue(){
    var value= $.ajax({ 
-      url: 'http://localhost:8080/hangman/r/words/' + rand, 
+      url: '/hangman/r/words/' + rand, 
       async: false
    }).responseText;
    return value.substr(10,value.length-12);
