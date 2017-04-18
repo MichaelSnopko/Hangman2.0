@@ -54,15 +54,6 @@ public class WordTest {
     /**
      * Test of setDescription method, of class Word.
      */
-    @Test
-    public void testSetDescription() {
-        System.out.println("setDescription");
-        String description = "";
-        Word instance = new Word();
-        instance.setDescription(description);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of setTitle method, of class Word.
@@ -80,15 +71,6 @@ public class WordTest {
     /**
      * Test of setCategory method, of class Word.
      */
-    @Test
-    public void testSetCategory() {
-        System.out.println("setCategory");
-        String category = "";
-        Word instance = new Word();
-        instance.setCategory(category);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of getWordId method, of class Word.
@@ -106,17 +88,7 @@ public class WordTest {
 
     /**
      * Test of getDescription method, of class Word.
-     */
-    @Test
-    public void testGetDescription() {
-        System.out.println("getDescription");
-        Word instance = new Word();
-        String expResult = "";
-        String result = instance.getDescription();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+
 
     /**
      * Test of getTitle method, of class Word.
@@ -135,16 +107,6 @@ public class WordTest {
     /**
      * Test of getCategory method, of class Word.
      */
-    @Test
-    public void testGetCategory() {
-        System.out.println("getCategory");
-        Word instance = new Word();
-        String expResult = "";
-        String result = instance.getCategory();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of toJson method, of class Word.

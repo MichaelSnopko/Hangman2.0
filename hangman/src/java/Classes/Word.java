@@ -14,66 +14,42 @@ import javax.json.JsonObject;
  */
 public class Word {
     private int wordId;
-    private String description;
     private String title;
-    private String category;
     
     public Word(){
     
     }
 
-    public Word(int wordId, String description, String title, String category) {
+    public Word(int wordId, String title) {
         this.wordId = wordId;
-        this.description = description;
         this.title = title;
-        this.category = category;
     }
     
     public Word(JsonObject json){
     wordId = json.getInt("wordId", 0);
-    description = json.getString("description", "");
     title = json.getString("title", "");
-    category = json.getString("category", "");
     }
 
     public void setWordId(int wordId) {
         this.wordId = wordId;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     public int getWordId() {
         return wordId;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public String getTitle() {
         return title;
-    }
-
-    public String getCategory() {
-        return category;
     }
     
     public JsonObject toJson(){
     return Json.createObjectBuilder()
-            //.add("wordId", wordId)
-            //.add("description", description)
+            //.add("wordId", wordId)     
             .add("title", title)
-            //.add("category", category)
             .build();  
     }
 }

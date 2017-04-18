@@ -31,7 +31,7 @@ public class wordController {
     private Word currentWord = new Word();
 
     public wordController() {
-        currentWord = new Word(0, "", "", "");
+        currentWord = new Word(0, "");
         getDBUtils();
     }
      private void getDBUtils() {
@@ -45,8 +45,6 @@ public class wordController {
                 Word w = new Word();
                 w.setWordId(rs.getInt("wordId"));
                 w.setTitle(rs.getString("title"));
-                w.setDescription(rs.getString("description"));
-                w.setCategory(rs.getString("category"));
                 words.add(w);
             }
         } catch (SQLException ex) {
