@@ -147,7 +147,7 @@ body, html, #category, #category1, #words, #add, #introPage, #introText, #introT
     text-decoration: none;
     line-height: 75px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 #add:hover{
@@ -866,4 +866,18 @@ body, html, #category, #category1, #words, #introPage, #introText, #introText p,
     padding-top: 150px;
     
     
+}
+
+img{
+    padding-left: 225px;
+    padding-top: 30px;
+    height:250px;
+    width: 250px;
+}
+
+
+     
+#t1{
+    padding-left: 25px;
+    margin-top: 20px;
 }
