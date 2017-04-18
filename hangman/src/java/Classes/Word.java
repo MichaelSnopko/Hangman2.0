@@ -17,7 +17,7 @@ public class Word {
     private String title;
     
     public Word(){
-    
+        
     }
 
     public Word(int wordId, String title) {
