@@ -33,6 +33,14 @@ function getValue(){
    return value.substr(10,value.length-12);
 }
 
+function putValue(){
+   var value= $.ajax({ 
+      url: '/hangman/r/words/', 
+      async: false
+   }).responseText;
+   return value.substr(10,value.length-12);
+}
+
     if(numRight==1){
         results.style.visibility = "visible";
         results.style.color = "red";

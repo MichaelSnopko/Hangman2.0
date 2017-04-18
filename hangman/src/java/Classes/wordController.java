@@ -7,6 +7,7 @@ package Classes;
 
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -51,6 +52,33 @@ public class wordController {
             Logger.getLogger(wordController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+     
+      public void persistToDb(Word w) {
+        try {
+            String sql = "";
+            Connection conn = DBUtils.getConnection();
+            if (w.getWordId() <= 0) {
+                sql = "INSERT INTO words (title) VALUES (?)";
+            } else {
+                sql = "UPDATE words SET title = ? WHERE wordId = ?";
+            }
+            PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            pstmt.setString(1, w.getTitle());
+            pstmt.executeUpdate();
+             if (w.getWordId() > 0) {
+                pstmt.setInt(5, w.getWordId());
+            }
+            if (w.getWordId() <= 0) {
+                ResultSet rs = pstmt.getGeneratedKeys();
+                rs.next();
+                int id = rs.getInt(1);
+                w.setWordId(id);
+            }
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(wordController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public List<Word> getAll() {
         return words;
@@ -89,7 +117,7 @@ public class wordController {
 
     public JsonObject addJson(JsonObject json) {
         Word w = new Word(json);
-        getDBUtils();
+         persistToDb(w);
         words.add(w);
         return w.toJson();
     }

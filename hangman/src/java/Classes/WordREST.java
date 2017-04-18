@@ -52,13 +52,5 @@ public class WordREST {
     public Response add(JsonObject json) {
         return Response.ok(words.addJson(json)).build();
     }
-    
-    @PUT
-    @Path("{wordId}")
-    @Consumes("application/json")
-    @Produces("application/json")
-    public Response set(@PathParam("id") int id) {
-        //todo use controller's editJson method
-        return null;
-    }
+  
 }
