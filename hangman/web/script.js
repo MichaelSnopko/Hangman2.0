@@ -19,7 +19,7 @@ function Game(){
 
 
 function Words(){
-    rand = Math.floor(Math.random()*29)+1;
+    rand = Math.floor(Math.random()*30)+1;
 
     word = getValue();
     document.getElementById('singlePage').style.display = "none";

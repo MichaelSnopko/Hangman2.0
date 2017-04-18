@@ -130,17 +130,6 @@ public class wordControllerTest {
     /**
      * Test of editJson method, of class wordController.
      */
-    @Test
-    public void testEditJson() {
-        System.out.println("editJson");
-        int id = 0;
-        JsonObject json = null;
-        wordController instance = new wordController();
-        JsonObject expResult = null;
-        JsonObject result = instance.editJson(id, json);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+
     
 }

@@ -85,7 +85,11 @@ public class wordController {
     }
 
     public JsonArray getAllJson() {
-        return null;
+        JsonArrayBuilder json = Json.createArrayBuilder();
+        for (Word w : words) {
+            json.add(w.toJson());
+        }
+        return json.build();
     }
 
     public Word getById(int id) {    
@@ -120,9 +124,5 @@ public class wordController {
          persistToDb(w);
         words.add(w);
         return w.toJson();
-    }
-
-    public JsonObject editJson(int id, JsonObject json) {
-        return null;
     }
 }
