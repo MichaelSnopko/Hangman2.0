@@ -12,18 +12,25 @@ var numRight = 0;
 var wordLength = 0;
 var numChar = 0;
 var wordToAdd = "";
+var rannum = 30;
 function Game(){
     document.getElementById('introPage').style.display = "none";
     document.getElementById('singlePage').style.display = "block";
 }
 
 function Add(){
-    wordToAdd = document.getElementById('addWord').value;
-    putValue(wordToAdd);
+   $.ajax({
+            url: '/hangman/r/words/',
+            method: 'post',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                title: $('#addWord').val()    
+            })
+        });
 }
 
 function Words(){
-    rand = Math.floor(Math.random()*30)+1;
+    rand = Math.floor(Math.random()*rannum)+1;
 
     word = getValue();
     document.getElementById('singlePage').style.display = "none";
@@ -38,23 +45,7 @@ function getValue(){
    return value.substr(10,value.length-12);
 }
 
-function putValue(wordToAdd){	
-$.postJSON = function(wordToAdd) {
-    return jQuery.ajax({
-    contentType: "application/json" ,
-    type: 'POST',
-    url: '/hangman/r/words/',
-    data: JSON.stringify(wordToAdd),
-    dataType: 'json' 
-    });
-};
-}
 
-//function putValue(wordToAdd){
-//   $.post("/hangman/r/words/",{
-//       title: wordToAdd
-//   });
-//}
 
     if(numRight==1){
         results.style.visibility = "visible";
