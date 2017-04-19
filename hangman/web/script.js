@@ -19,9 +19,10 @@ function Game(){
 }
 
 function Add(){
+   
    $.ajax({
             url: '/hangman/r/words/',
-            method: 'post',
+            method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({
                 title: $('#addWord').val()    
