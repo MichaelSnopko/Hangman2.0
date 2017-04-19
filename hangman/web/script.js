@@ -19,7 +19,7 @@ function Game(){
 
 function Add(){
     wordToAdd = document.getElementById('addWord').value;
-    
+    putValue(wordToAdd);
 }
 
 function Words(){
@@ -33,18 +33,28 @@ function Words(){
 function getValue(){
    var value= $.ajax({ 
       url: '/hangman/r/words/' + rand, 
-      async: false
+      async: false    
    }).responseText;
    return value.substr(10,value.length-12);
 }
 
-function putValue(){
-   var value= $.ajax({ 
-      url: '/hangman/r/words/', 
-      async: false
-   }).responseText;
-   return value.substr(10,value.length-12);
+function putValue(wordToAdd){	
+$.postJSON = function(wordToAdd) {
+    return jQuery.ajax({
+    contentType: "application/json" ,
+    type: 'POST',
+    url: '/hangman/r/words/',
+    data: JSON.stringify(wordToAdd),
+    dataType: 'json' 
+    });
+};
 }
+
+//function putValue(wordToAdd){
+//   $.post("/hangman/r/words/",{
+//       title: wordToAdd
+//   });
+//}
 
     if(numRight==1){
         results.style.visibility = "visible";
