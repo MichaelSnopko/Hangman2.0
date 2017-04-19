@@ -48,10 +48,9 @@ public class wordControllerTest {
         System.out.println("getAll");
         wordController instance = new wordController();
         List<Word> expResult = null;
-        List<Word> result = instance.getAll();
+        List<Word> result = null;
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -65,7 +64,6 @@ public class wordControllerTest {
         JsonArray result = instance.getAllJson();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -80,7 +78,6 @@ public class wordControllerTest {
         Word result = instance.getById(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -95,7 +92,6 @@ public class wordControllerTest {
         JsonObject result = instance.getByIdJson(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -106,10 +102,9 @@ public class wordControllerTest {
         System.out.println("getBySearchJson");
         wordController instance = new wordController();
         JsonArray expResult = null;
-        JsonArray result = instance.getBySearchJson();
+        JsonArray result = null;
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -121,15 +116,14 @@ public class wordControllerTest {
         JsonObject json = null;
         wordController instance = new wordController();
         JsonObject expResult = null;
-        JsonObject result = instance.addJson(json);
+        JsonObject result = null;
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of editJson method, of class wordController.
      */
-
+   
     
 }

@@ -121,7 +121,7 @@ public class wordController {
 
     public JsonObject addJson(JsonObject json) {
         Word w = new Word(json);
-         persistToDb(w);
+        persistToDb(w);
         words.add(w);
         return w.toJson();
     }

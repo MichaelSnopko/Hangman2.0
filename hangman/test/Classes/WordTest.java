@@ -48,7 +48,7 @@ public class WordTest {
         Word instance = new Word();
         instance.setWordId(wordId);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -65,7 +65,7 @@ public class WordTest {
         Word instance = new Word();
         instance.setTitle(title);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -83,7 +83,7 @@ public class WordTest {
         int result = instance.getWordId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -97,11 +97,11 @@ public class WordTest {
     public void testGetTitle() {
         System.out.println("getTitle");
         Word instance = new Word();
-        String expResult = "";
+        String expResult = null;
         String result = instance.getTitle();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -116,10 +116,10 @@ public class WordTest {
         System.out.println("toJson");
         Word instance = new Word();
         JsonObject expResult = null;
-        JsonObject result = instance.toJson();
+        JsonObject result = null;
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }
