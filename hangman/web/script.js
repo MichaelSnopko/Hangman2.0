@@ -11,12 +11,16 @@ var numWrong = 0;
 var numRight = 0;
 var wordLength = 0;
 var numChar = 0;
-
+var wordToAdd = "";
 function Game(){
     document.getElementById('introPage').style.display = "none";
     document.getElementById('singlePage').style.display = "block";
 }
 
+function Add(){
+    wordToAdd = document.getElementById('addWord').value;
+    
+}
 
 function Words(){
     rand = Math.floor(Math.random()*30)+1;
@@ -25,6 +29,7 @@ function Words(){
     document.getElementById('singlePage').style.display = "none";
     hangman();
 }
+
 function getValue(){
    var value= $.ajax({ 
       url: '/hangman/r/words/' + rand, 
